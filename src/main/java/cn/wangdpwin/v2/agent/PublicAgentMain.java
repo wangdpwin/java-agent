@@ -1,9 +1,7 @@
-package com.sys.insertPilepublic;
+package cn.wangdpwin.v2.agent;
 
 import javassist.*;
-
 import java.lang.instrument.ClassFileTransformer;
-import java.lang.instrument.IllegalClassFormatException;
 import java.lang.instrument.Instrumentation;
 import java.security.ProtectionDomain;
 
@@ -29,7 +27,7 @@ public class PublicAgentMain {
 
         instrumentation.addTransformer(new ClassFileTransformer() {
             @Override
-            public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) throws IllegalClassFormatException {
+            public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) {
 //                System.out.println(className);
                 if (className == null || !className.replaceAll("/",".").startsWith(config)) {
                     return null;
@@ -104,7 +102,7 @@ public class PublicAgentMain {
             "            result = ($w)%s$agent($$);\n" +
             "        } finally {\n" +
             "            long end = System.currentTimeMillis();\n" +
-            "            System.out.println(\"耗时\" + (end - begin));\n" +
+            "            System.out.println(\"耗时：\" + (end - begin));\n" +
             "        }\n" +
             "        return ($r) result;}";
 

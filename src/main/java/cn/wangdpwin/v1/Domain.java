@@ -1,4 +1,4 @@
-package core;
+package cn.wangdpwin.v1;
 
 /**
  * @Author wangdongpeng
@@ -19,7 +19,7 @@ public class Domain {
 
 
     public static void main(String[] args) throws Exception {
-        CtClass ctClass = ClassPool.getDefault().get("core.DoMain");
+        CtClass ctClass = ClassPool.getDefault().get("core.Domain");
         CtMethod premain = ctClass.getDeclaredMethod("premain", new CtClass[]{
                 ClassPool.getDefault().get("java.lang.String"),
                 ClassPool.getDefault().get("java.lang.instrument.Instrumentation")

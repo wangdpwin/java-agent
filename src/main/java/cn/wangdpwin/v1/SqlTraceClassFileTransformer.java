@@ -1,4 +1,4 @@
-package core;
+package cn.wangdpwin.v1;
 
 import javassist.ClassPool;
 import javassist.CtClass;

@@ -29,7 +29,7 @@
                             <Project-name>${project.name}</Project-name>
                             <Project-version>${project.version}</Project-version>
                             <!-- 需要打包的类的 -->
-                            <Premain-Class>com.sys.insertPilepublic.PublicAgentMain</Premain-Class>
+                            <Premain-Class>cn.wangdpwin.v2.agent.PublicAgentMain</Premain-Class>
                             <Can-Redefine-Classes>false</Can-Redefine-Classes>
                             <Can-Retransform-Classes>false</Can-Retransform-Classes>
                         </manifestEntries>
